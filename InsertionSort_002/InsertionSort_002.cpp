@@ -28,5 +28,26 @@ void input() {    //procedure input
 		cout << "masukkan data ke-" << (i + 1) << ":";
 		cin >> arr[i];
 	}
+}
 
+void isertionsort() {      //procedure insertionsort
+
+	int temp;      //membuat variable data temporer atau penyimpanan sementara
+	int j;         //membuat variable j sebagai penanda
+	for (int i = 1; i < n; i++) {      //looping dengan i dimulai dari 1 hingga n+1
+
+		temp = arr[i];      // simpan nilai arr[i] ke variable sementara temp
+		j = i - 1;        //setting nilai j sama dengan i-1
+
+		while (j >= 0 && arr[j] > temp) {     //looping while dimana nilai j lebih besar sama dengan 0 dan
+			arr[j + 1] = arr[j];     //arr[j] lebih besar daripada temp
+			j--;               //decrement nilai j by 1
+		}
+		arr[j + 1] = temp;     //simpan nilai temp ke dalam arr[j+1]
+
+		cout << "\nstep " << i << ": ";    //output ke layar
+		for (int k = 0; k < n; k++) {     //looping nilai k dimulai dari 0 hingga n-1
+			cout << arr[k] << " ";    //output ke layar
+		}
+	}
 }
